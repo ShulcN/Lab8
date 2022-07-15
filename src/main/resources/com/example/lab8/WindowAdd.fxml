@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.SpinnerValueFactory.DoubleSpinnerValueFactory?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="517.0" prefWidth="458.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainWindow.addWindow">
+   <children>
+      <VBox alignment="CENTER" prefHeight="517.0" prefWidth="458.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="48.0" prefWidth="198.0" text="%Add" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font name="Courier New" size="29.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="nameProduct" maxHeight="40.0" maxWidth="300.0" prefHeight="39.0" prefWidth="186.0" promptText="%nameProduct" style="-fx-background-color: #CFB053; -fx-prompt-text-fill: black; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-color: black;" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font name="Courier New Bold" size="12.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="100.0" right="100.0" />
+               </VBox.margin>
+            </TextField>
+            <ChoiceBox fx:id="unitOfMeasureField" maxHeight="36.0" maxWidth="300.0" prefHeight="36.0" prefWidth="258.0" style="-fx-background-color: #CFB053; -fx-background-radius: 500;" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets left="100.0" right="100.0" />
+               </VBox.margin>
+            </ChoiceBox>
+            <Spinner fx:id="priceField" editable="true" maxHeight="30.0" maxWidth="118.0" prefHeight="26.0" prefWidth="118.0" style="-fx-background-color: #CFB053; -fx-background-radius: 500;" VBox.vgrow="ALWAYS">
+               <valueFactory>
+                  <SpinnerValueFactory.DoubleSpinnerValueFactory amountToStepBy="0.1" initialValue="0.0" max="10000000" min="0.0" />
+               </valueFactory>
+               </Spinner>
+            <ChoiceBox fx:id="kind" maxHeight="35.0" maxWidth="300.0" prefHeight="35.0" prefWidth="258.0" style="-fx-background-color: #CFB053; -fx-background-radius: 500;">
+               <VBox.margin>
+                  <Insets left="100.0" right="100.0" />
+               </VBox.margin>
+            </ChoiceBox>
+            <Label alignment="CENTER" maxHeight="30.0" maxWidth="1.7976931348623157E308" prefHeight="34.0" prefWidth="151.0" text="%coordinates" VBox.vgrow="ALWAYS" />
+            <HBox alignment="TOP_CENTER" maxWidth="500.0" prefHeight="30.0" prefWidth="20.0" spacing="20.0">
+               <children>
+                  <Spinner editable="true" initialValue="0" max="780" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" min="0" prefHeight="34.0" prefWidth="90.0" style="-fx-background-color: #CFB053; -fx-background-radius: 500;" fx:id="xField" />
+                  <Spinner fx:id="yField" editable="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="34.0" prefWidth="90.0" style="-fx-background-color: #CFB053; -fx-background-radius: 500;">
+                     <valueFactory>
+                        <SpinnerValueFactory.DoubleSpinnerValueFactory amountToStepBy="0.1" initialValue="0.0" max="260" min="0.0" />
+                     </valueFactory>
+                  </Spinner>
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="97.0" prefWidth="458.0" spacing="60.0">
+               <children>
+                  <Button accessibleHelp="asdasd" accessibleRoleDescription="asdasdsfa" accessibleText="asdfasdf" minHeight="-Infinity" minWidth="0.0" mnemonicParsing="false" onAction="#cancel" prefHeight="39.0" prefWidth="89.0" style="-fx-background-radius: 500; -fx-background-color: #D1740B;" text="%cancel" />
+                  <Button fx:id="addButton" accessibleHelp="asdasd" accessibleRoleDescription="asdasdsfa" accessibleText="asdfasdf" minHeight="-Infinity" minWidth="0.0" mnemonicParsing="false" onAction="#fillStrings" prefHeight="39.0" prefWidth="89.0" style="-fx-background-radius: 500; -fx-background-color: #D1740B;" text="%Add" />
+               </children>
+               <VBox.margin>
+                  <Insets top="50.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
