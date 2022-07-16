@@ -414,7 +414,7 @@ public class mainWindowController {
             Product product = productStringCellEditEvent.getRowValue();
             String oldValue = product.getName();
             product.setName(productStringCellEditEvent.getNewValue());
-            if (product.getLogin().equals(PersonalInfo.getLogin())) {
+            if (product.getLogin().equals(PersonalInfo.getLogin()) && !productStringCellEditEvent.getNewValue().isEmpty()) {
                 products = SendCommand.SendAndGetCommand(new UpdateID(product.getId().toString(), product, PersonalInfo.getLogin()));
             } else {
                 product.setName(oldValue);
@@ -453,6 +453,12 @@ public class mainWindowController {
             }catch (Exception e){
                 e.printStackTrace();
             }
+            if (product.getPrice()>10000000){
+                LabelText.setText(getStringBinding("CostProblem"));
+                product.setPrice(oldValue);
+                Table.refresh();
+                return;
+            }
             if (product.getLogin().equals(PersonalInfo.getLogin())) {
                 products = SendCommand.SendAndGetCommand(new UpdateID(product.getId().toString(), product, PersonalInfo.getLogin()));
             } else {
@@ -460,7 +466,7 @@ public class mainWindowController {
                 LabelText.setText(getStringBinding("NotYours"));
                 Table.refresh();
             }
-            System.out.println(products);
+
             FillTable(products);
         });
         unitOfMeasureColumn.setCellFactory(TextFieldTableCell.forTableColumn());
@@ -480,7 +486,6 @@ public class mainWindowController {
                 LabelText.setText(getStringBinding("NotYours"));
                 Table.refresh();
             }
-            System.out.println(products);
             FillTable(products);
         });
         creationDateColumn.setEditable(true);
@@ -500,7 +505,6 @@ public class mainWindowController {
                 LabelText.setText(getStringBinding("NotYours"));
                 Table.refresh();
             }
-            System.out.println(products);
             FillTable(products);
         });
         Table.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {

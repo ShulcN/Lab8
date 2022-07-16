@@ -29,19 +29,15 @@ public class removeWindow {
     @FXML
     private Button addButton;
 
-    public static void removeWindow(){
-
-    }
-
     @FXML
     void initialize(){
         Id.setItems(ids);
     }
-    public void cancel(ActionEvent event) {
+    public void cancel() {
         ((Stage)addButton.getScene().getWindow()).close();
     }
 
-    public void fillStrings(ActionEvent event) {
+    public void fillStrings() {
         Long id = Id.getValue();
         try {
             if (id==null)throw new Exception();
@@ -51,5 +47,6 @@ public class removeWindow {
         }
         LinkedHashSet<Product> linkedHashSet = SendCommand.SendAndGetCommand(new RemoveID(id.toString(), PersonalInfo.getLogin()));
         mainWindowController.FillTable(linkedHashSet);
+        cancel();
     }
 }
