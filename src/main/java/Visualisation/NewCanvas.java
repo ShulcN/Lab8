@@ -15,6 +15,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 
+import java.net.URL;
+import java.util.Objects;
+
 /**Класс создания отдельной визуализации объекта*/
 public class NewCanvas {
     public static Canvas newCanvas(Product product, Label label, AnchorPane productArea){
@@ -39,7 +42,7 @@ public class NewCanvas {
                 label.setText(product.toString());
             }
         });
-        Image image = new Image(product.getType().getImgPath());
+        Image image = new Image(Objects.requireNonNull(NewCanvas.class.getResourceAsStream(product.getType().getImgPath())));
         PixelReader pixelReader = image.getPixelReader();
         WritableImage writableImage = new WritableImage(pixelReader, (int)image.getWidth(), (int)image.getHeight());
         PixelWriter pixelWriter =writableImage.getPixelWriter();
