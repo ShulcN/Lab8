@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.SpinnerValueFactory.DoubleSpinnerValueFactory?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #6B6B6B;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SignUpWindow.SignUpController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="351.0" prefWidth="601.0" spacing="10.0" AnchorPane.bottomAnchor="49.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox minWidth="500.0" prefHeight="261.0" prefWidth="500.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <AnchorPane maxHeight="350.0" prefHeight="122.0" prefWidth="601.0" style="-fx-background-color: #cfb053; -fx-border-color: black; -fx-background-radius: 15; -fx-border-radius: 15;" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label fx:id="LabelText" alignment="CENTER" layoutX="4.0" layoutY="5.0" prefHeight="133.0" prefWidth="600.0" text="%FillTheFields" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="-3.0" AnchorPane.topAnchor="4.0">
+                           <font>
+                              <Font name="Courier New Italic" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <HBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </HBox.margin>
+                  </AnchorPane>
+               </children>
+               <VBox.margin>
+                  <Insets left="50.0" right="50.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="15.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <VBox alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" minWidth="200.0" prefWidth="200.0" spacing="10.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <TextField fx:id="LoginField" prefHeight="30.0" prefWidth="206.0" promptText="%login" style="-fx-background-color: #CFB053; -fx-prompt-text-fill: black; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-color: black;">
+                           <font>
+                              <Font name="Courier New Bold" size="12.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </TextField>
+                        <PasswordField fx:id="passwordField" prefHeight="30.0" prefWidth="206.0" promptText="%password" style="-fx-background-color: CFB053; -fx-background-radius: 20; -fx-border-color: black; -fx-border-radius: 15; -fx-text-fill: black; -fx-prompt-text-fill: black;">
+                           <font>
+                              <Font name="Courier New Bold" size="12.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </PasswordField>
+                        <PasswordField fx:id="passwordField1" prefHeight="25.0" prefWidth="139.0" promptText="%ConfirmPassword" style="-fx-background-color: CFB053; -fx-background-radius: 20; -fx-border-color: black; -fx-border-radius: 15; -fx-text-fill: black; -fx-prompt-text-fill: black;">
+                           <font>
+                              <Font name="Courier New Bold" size="12.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </PasswordField>
+                        <ColorPicker fx:id="ColorBox" maxWidth="350.0" minHeight="35.0" prefHeight="35.0" prefWidth="336.0" style="-fx-background-color: #CFB053; -fx-background-radius: 20;" VBox.vgrow="ALWAYS">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </ColorPicker>
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" minWidth="225.0" prefWidth="96.0" spacing="10.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <TextField fx:id="ownerName" prefHeight="39.0" prefWidth="186.0" promptText="%nameOwner" style="-fx-background-color: #CFB053; -fx-prompt-text-fill: black; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-color: black;">
+                           <font>
+                              <Font name="Courier New Bold" size="12.0" />
+                           </font>
+                        </TextField>
+                        <ChoiceBox fx:id="nationality" maxWidth="1.7976931348623157E308" prefHeight="39.0" prefWidth="186.0" style="-fx-background-color: #CFB053; -fx-background-radius: 500;" VBox.vgrow="ALWAYS" />
+                        <Spinner fx:id="weightField" editable="true" prefHeight="34.0" prefWidth="179.0" style="-fx-background-color: #CFB053; -fx-background-radius: 500;" VBox.vgrow="ALWAYS">
+                           <valueFactory>
+                              <SpinnerValueFactory.DoubleSpinnerValueFactory amountToStepBy="0.1" initialValue="0.0" max="400" min="0.0" />
+                           </valueFactory>
+                        </Spinner>
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets right="10.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </HBox>
+            <Button fx:id="SignInButton" maxHeight="70.0" maxWidth="400.0" minHeight="30.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="170.0" style="-fx-background-color: #D1740B; -fx-background-radius: 25; -fx-border-radius: 25; -fx-border-color: black;" text="%Register" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font name="Courier New Bold" size="13.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="220.0" right="220.0" />
+               </VBox.margin>
+            </Button>
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+               <children>
+                  <Button fx:id="backBut" maxHeight="70.0" maxWidth="400.0" minHeight="30.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="101.0" style="-fx-background-color: #D1740B; -fx-background-radius: 25; -fx-border-radius: 25; -fx-border-color: black;" text="%Back">
+                     <font>
+                        <Font name="Courier New Bold" size="13.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <ChoiceBox fx:id="longuage" layoutX="450.0" layoutY="359.0" maxWidth="160.0" prefHeight="26.0" prefWidth="127.0" style="-fx-background-color: D1740B; -fx-background-radius: 500;">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </ChoiceBox>
+   </children>
+</AnchorPane>
